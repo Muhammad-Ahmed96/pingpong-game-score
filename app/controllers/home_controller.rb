@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def history
+    @games = current_user.games
   end
 
   def log

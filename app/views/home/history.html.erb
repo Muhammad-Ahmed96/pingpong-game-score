@@ -1,5 +1,28 @@
 <h1 class='page-header'>History</h1>
 
+<table cellpadding="0" cellspacing="0" border="0" class="table table-hover table-bordered table-striped" id="example">
+  <thead>
+    <tr>
+      <th><a href="#" data-toggle="tooltip" title="Date of that Epic Game">Date</a></th>
+      <th><a href="#" data-toggle="tooltip" title="Name of the Other Player">Opponent</a></th>
+      <th><a href="#" data-toggle="tooltip" title="Final Score of the Game">Score</a></th>
+      <th><a href="#" data-toggle="tooltip" title="Result of the Game">Result</a></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.date_played.strftime('%b %e') %></td>
+        <td><%= game.other_player(current_user) %></td>
+        <td><%= game.scores(current_user) %></td>
+        <td><%= game.game_result(current_user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
 
 <%= image_tag('history.png') %>
