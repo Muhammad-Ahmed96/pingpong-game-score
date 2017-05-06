@@ -13,7 +13,7 @@
   <div class="form-group">
     <%= f.label :opponent, class: "col-sm-2 control-label" %>
     <div class="col-sm-3">
-      <%= select_tag :opponent, options_from_collection_for_select(@users, :id, "#{:name}"), class: "form-control"%>
+      <%= select_tag :opponent, options_from_collection_for_select(@users, :id, :name_or_email), class: "form-control"%>
     </div>
   </div>
 

@@ -14,7 +14,7 @@
     <% @users.each_with_index do |user, index| %>
       <tr>
         <td><%= index + 1 %></td>
-        <td><%= getName(user) %></td>
+        <td><%= get_name(user) %></td>
         <td><%= user.ranking %></td>
         <td><%= user.played %></td>
       </tr>
