@@ -2,6 +2,8 @@
 
 Play Ping Pong with ELO Ranking of all the Players, like Tennis or Chess World Associations. \o/
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Screenshots
 
 Here are some screenshots of the system
