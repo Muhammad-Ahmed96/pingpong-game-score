@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :trackable, :validatable
+  has_many :games
 
   def games
     Game.where('player_1_id = ? OR player_2_id = ?', self.id, self.id)

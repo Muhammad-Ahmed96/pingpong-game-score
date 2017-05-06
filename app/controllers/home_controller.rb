@@ -4,7 +4,8 @@ class HomeController < ApplicationController
   end
 
   def history
-    @games = current_user.games
+    # Someday we'll need pagination
+    @games = current_user.games.order(date_played: :desc, created_at: :desc)
   end
 
   def log
