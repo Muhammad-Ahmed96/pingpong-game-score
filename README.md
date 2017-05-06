@@ -1,5 +1,10 @@
+# Ping Pong ELO Ranking
+
+Play Ping Pong with ELO Ranking of all the Players, like Tennis or Chess World Associations. \o/
+
 ## Screenshots
 
+Here are some screenshots of the system
 #### Main Screen
 ![l1](https://cloud.githubusercontent.com/assets/122941/25774881/d1666710-325d-11e7-86b8-d3741222cb1c.png)
 #### Log Game Screen
@@ -7,6 +12,9 @@
 ![l4](https://cloud.githubusercontent.com/assets/122941/25774878/d1490044-325d-11e7-948e-8eb9e14aadd7.png)
 #### Game History Screen
 ![l5](https://cloud.githubusercontent.com/assets/122941/25774879/d14e8b36-325d-11e7-9623-e671c6ff3a4c.png)
+#### Running Tests
+![l6](https://cloud.githubusercontent.com/assets/122941/25775122/4eb6f7fc-3263-11e7-852d-ad462fef1efd.png)
+
 
 ## Getting Started
 
