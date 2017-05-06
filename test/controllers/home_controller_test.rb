@@ -13,4 +13,20 @@ class HomeControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
+
+  test "should get log page" do
+    user = users(:default)
+    sign_in user
+
+    get :log
+    assert_response :success
+  end
+
+  test "should get history page" do
+    user = users(:default)
+    sign_in user
+
+    get :history
+    assert_response :success
+  end
 end
