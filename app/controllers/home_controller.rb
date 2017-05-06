@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    @users = User.order("ranking DESC")
   end
 
   def history
