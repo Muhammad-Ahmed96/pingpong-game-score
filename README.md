@@ -1,3 +1,13 @@
+## Screenshots
+
+#### Main Screen
+![l1](https://cloud.githubusercontent.com/assets/122941/25774881/d1666710-325d-11e7-86b8-d3741222cb1c.png)
+#### Log Game Screen
+![l3](https://cloud.githubusercontent.com/assets/122941/25774880/d165b73e-325d-11e7-831e-1d7578ec4e2b.png)
+![l4](https://cloud.githubusercontent.com/assets/122941/25774878/d1490044-325d-11e7-948e-8eb9e14aadd7.png)
+#### Game History Screen
+![l5](https://cloud.githubusercontent.com/assets/122941/25774879/d14e8b36-325d-11e7-9623-e671c6ff3a4c.png)
+
 ## Getting Started
 
 1. Run `bundle`
@@ -18,7 +28,7 @@ The framework of the app already allows users to register and sign in. Your task
 
 ## Requirements
 
-Time alotted: 4 hours. 
+Time alotted: 4 hours.
 Mark your start and end times with your commits.
 
 Add all necessary migrations, models (with relationships, methods and validations), controllers, and tests.
