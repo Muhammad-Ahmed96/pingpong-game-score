@@ -1,5 +1,45 @@
 <h1 class='page-header'>Log Game</h1>
 
+<%= form_for(@game, url: log_create_path, html: { class: 'form-horizontal' } ) do |f| %>
+  <%# ToDo: f.error_notification %>
+
+  <div class="form-group">
+    <%= f.label :date_played, class: "col-sm-2 control-label" %>
+    <div class="col-sm-3">
+      <%= f.date_field :date_played, autofocus: true, value: Date.today, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :opponent, class: "col-sm-2 control-label" %>
+    <div class="col-sm-3">
+      <%= select_tag :opponent, options_from_collection_for_select(@users, :id, "#{:name}"), class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :your_score, class: "col-sm-2 control-label" %>
+    <div class="col-sm-2">
+      <%= f.number_field :player_1_score, min: 0, max: 99, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :your_score, class: "col-sm-2 control-label" %>
+    <div class="col-sm-2">
+      <%= f.number_field :player_2_score, min: 0, max: 99, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Save", class: "btn btn-primary" %> <%= link_to 'cancel', root_path %>
+    </div>
+  </div>
+
+<% end %>
+
+
 <div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
 
 <%= image_tag('log_game.png') %>
