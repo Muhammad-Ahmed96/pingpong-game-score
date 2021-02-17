@@ -37,4 +37,12 @@ class User < ActiveRecord::Base
     games.count
   end
 
+  def won_games
+    games.where("player_1_score > player_2_score")
+  end
+
+  def lost_games
+    games.where("player_1_score < player_2_score")
+  end
+
 end

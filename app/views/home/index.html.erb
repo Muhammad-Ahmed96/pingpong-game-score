@@ -7,6 +7,7 @@
       <th><a href="#" data-toggle="tooltip" title="Name of the Player">Name</a></th>
       <th><a href="#" data-toggle="tooltip" title="Current ELO Score">Score</a></th>
       <th><a href="#" data-toggle="tooltip" title="Number of Games Played">Games Played</a></th>
+      <th><a href="#" data-toggle="tooltip" title="Statistics">Statistics</a></th>
     </tr>
   </thead>
 
@@ -14,9 +15,10 @@
     <% @users.each_with_index do |user, index| %>
       <tr>
         <td><%= index + 1 %></td>
-        <td><%= get_name(user) %></td>
+        <td><a href="<%=user.id%>/history"><%= get_name(user) %></a></td>
         <td><%= user.ranking %></td>
         <td><%= user.played %></td>
+        <td><%= user.won_games.count %>W - <%= user.lost_games.count %>L</td>
       </tr>
     <% end %>
   </tbody>

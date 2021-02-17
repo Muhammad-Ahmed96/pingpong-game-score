@@ -5,7 +5,9 @@ class HomeController < ApplicationController
 
   def history
     # Someday we'll need pagination
-    @games = current_user.games.order(date_played: :desc, created_at: :desc)
+    id = params[:id]
+    user = User.find(id) rescue nil
+    @games = user&.games&.order(date_played: :desc, created_at: :desc)
   end
 
   def log
