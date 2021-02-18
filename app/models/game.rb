@@ -21,9 +21,9 @@ class Game < ActiveRecord::Base
 
   validates_presence_of :player_1, :player_2, :player_1_score, :player_2_score, :date_played
 
-  validate :min_score
-  validate :max_score
-  validate :winning_difference
+  # validate :min_score
+  # validate :max_score
+  # validate :winning_difference
 
   after_create :set_elo_rankings
 
@@ -88,6 +88,13 @@ class Game < ActiveRecord::Base
       # Set the new ranking and do so!
       player_1.update_attribute(:ranking, player1_new_ranking)
       player_2.update_attribute(:ranking, player2_new_ranking)
+    end
+
+    def won
+      
+    end
+
+    def lost
     end
 
 end

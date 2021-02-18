@@ -18,7 +18,8 @@
         <td><a href="<%=user.id%>/history"><%= get_name(user) %></a></td>
         <td><%= user.ranking %></td>
         <td><%= user.played %></td>
-        <td><%= user.won_games.count %>W - <%= user.lost_games.count %>L</td>
+        <% result_array = [];user.games.each{|g| result_array<<g.game_result(user) } %>
+        <td><%= result_array.count("W") %>W - <%= result_array.count("L") %>L</td>
       </tr>
     <% end %>
   </tbody>

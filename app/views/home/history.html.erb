@@ -7,6 +7,7 @@
       <th><a href="#" data-toggle="tooltip" title="Name of the Other Player">Opponent</a></th>
       <th><a href="#" data-toggle="tooltip" title="Final Score of the Game">Score</a></th>
       <th><a href="#" data-toggle="tooltip" title="Result of the Game">Result</a></th>
+      <th><a href="#" data-toggle="tooltip" title="Action">Action</a></th>
     </tr>
   </thead>
 
@@ -17,6 +18,7 @@
         <td><%= game.other_player(current_user) %></td>
         <td><%= game.scores(current_user) %></td>
         <td><%= game.game_result(current_user) %></td>
+        <td><%= link_to "Delete", delete_game_path(game), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

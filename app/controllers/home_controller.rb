@@ -33,4 +33,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def delete_game
+    game = Game.find(params[:id])
+    game.destroy
+    redirect_to game_history_path(current_user), alert: "Game deleted successfully"
+  end
+
 end
