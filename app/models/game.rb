@@ -40,6 +40,23 @@ class Game < ActiveRecord::Base
     end
   end
 
+  def calulate_elo_rankings(k_value=32)
+      # As taken from the example provided in the README: https://github.com/rgho/elo.rb/blob/master/elo.rb
+
+      # Assign actual individual results
+      result = 0
+      result = 1 if player_1_score > player_2_score
+      player_1_result = result
+      player_2_result = 1 - result
+
+      # Calculate expected results
+      player1_expectation = 1.0/(1+10**((player_2.ranking - player_1.ranking)/400.0)) #the .0 is important to force float operations!))
+      player2_expectation = 1.0/(1+10**((player_1.ranking - player_2.ranking)/400.0))
+
+      # Calculate new rankings
+      [(k_value*(player_1_result - player1_expectation)),(k_value*(player_2_result- player2_expectation))]
+    end
+
   def game_result(u)
     u == (player_1_score > player_2_score ? player_1 : player_2) ? "W" : "L"
   end
@@ -90,8 +107,9 @@ class Game < ActiveRecord::Base
       player_2.update_attribute(:ranking, player2_new_ranking)
     end
 
+
     def won
-      
+
     end
 
     def lost

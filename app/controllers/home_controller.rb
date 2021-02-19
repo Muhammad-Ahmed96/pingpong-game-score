@@ -35,7 +35,15 @@ class HomeController < ApplicationController
 
   def delete_game
     game = Game.find(params[:id])
-    game.destroy
+    if game.destroy
+      p1_exp, p2_exp = game.calulate_elo_rankings
+      p1_exp = p1_exp.ceil + 1
+      p2_exp = p2_exp.floor - 1
+      p1 = game.player_1
+      p2 = game.player_2
+      p1.update_attributes(ranking: p1.ranking - p1_exp)
+      p2.update_attributes(ranking: p2.ranking - p2_exp)
+    end
     redirect_to game_history_path(current_user), alert: "Game deleted successfully"
   end
 
